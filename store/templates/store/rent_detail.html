@@ -1,0 +1,839 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root{
+            --primary:#007bff;
+            --secondary:#ff0000;
+            --dark:#050816;
+            --light:#f4f7fb;
+            --white:#ffffff;
+        }
+
+        body{
+            background:#f4f7fb;
+            font-family:'Montserrat',sans-serif;
+        }
+
+        /* MAIN SECTION */
+        .rent-section{
+            padding:60px 0;
+        }
+
+        /* CARD */
+        .rent-main-card{
+            background:white;
+            border-radius:35px;
+            overflow:hidden;
+            box-shadow:0 20px 60px rgba(0,0,0,0.08);
+        }
+
+        /* IMAGE SECTION */
+        .image-section{
+            position:relative;
+            background:#111;
+        }
+
+        .main-image{
+            width:100%;
+            height:600px;
+            object-fit:cover;
+            cursor:pointer;
+            transition:0.4s;
+        }
+
+        .main-image:hover{
+            transform:scale(1.03);
+        }
+
+        /* NAVIGATION BUTTONS */
+        .image-nav-btn{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            width:55px;
+            height:55px;
+            border:none;
+            border-radius:50%;
+            background:rgba(255,255,255,0.2);
+            backdrop-filter:blur(10px);
+            color:white;
+            font-size:20px;
+            transition:0.3s;
+            z-index:10;
+        }
+
+        .image-nav-btn:hover{
+            background:var(--primary);
+        }
+
+        .prev-btn{
+            left:20px;
+        }
+
+        .next-btn{
+            right:20px;
+        }
+
+        /* THUMBNAILS */
+        .thumbnail-container{
+            display:flex;
+            gap:15px;
+            overflow-x:auto;
+            padding:20px;
+            background:white;
+        }
+
+        .thumbnail-container::-webkit-scrollbar{
+            height:8px;
+        }
+
+        .thumbnail-container::-webkit-scrollbar-thumb{
+            background:#ddd;
+            border-radius:20px;
+        }
+
+        .thumbnail{
+            width:120px;
+            height:90px;
+            object-fit:cover;
+            border-radius:15px;
+            cursor:pointer;
+            transition:0.3s;
+            border:3px solid transparent;
+        }
+
+        .thumbnail:hover{
+            transform:translateY(-5px);
+            border-color:var(--primary);
+        }
+
+        /* DETAILS */
+        .details-section{
+            padding:50px;
+        }
+
+        .rent-badge{
+            display:inline-block;
+            background:rgba(0,123,255,0.12);
+            color:var(--primary);
+            padding:10px 20px;
+            border-radius:50px;
+            font-size:0.9rem;
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .rent-title{
+            font-size:3rem;
+            font-weight:800;
+            color:#111;
+            margin-bottom:15px;
+        }
+
+        .rent-price{
+            font-size:2.6rem;
+            font-weight:800;
+            color:var(--primary);
+            margin-bottom:25px;
+        }
+
+        .rent-description{
+            color:#666;
+            line-height:1.9;
+            margin-bottom:35px;
+        }
+
+        /* FEATURE GRID */
+        .feature-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:20px;
+            margin-bottom:40px;
+        }
+
+        .feature-card{
+            background:#f7f9fc;
+            border-radius:20px;
+            padding:20px;
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .feature-icon{
+            width:55px;
+            height:55px;
+            background:rgba(0,123,255,0.1);
+            border-radius:15px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:var(--primary);
+            font-size:1.4rem;
+        }
+
+        .feature-text h6{
+            margin:0;
+            font-weight:700;
+        }
+
+        .feature-text p{
+            margin:0;
+            color:#777;
+            font-size:0.9rem;
+        }
+
+        /* BUTTONS */
+        .action-buttons{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .rent-btn{
+            flex:1;
+            background:var(--primary);
+            color:white;
+            border:none;
+            padding:18px;
+            border-radius:50px;
+            font-weight:700;
+            transition:0.3s;
+        }
+
+        .rent-btn:hover{
+            background:#0056d2;
+            transform:translateY(-3px);
+        }
+
+        .back-btn{
+            flex:1;
+            background:#111;
+            color:white;
+            border:none;
+            padding:18px;
+            border-radius:50px;
+            font-weight:700;
+            text-align:center;
+            transition:0.3s;
+            text-decoration:none;
+        }
+
+        .back-btn:hover{
+            background:#000;
+            color:white;
+            transform:translateY(-3px);
+        }
+
+        .wishlist-btn{
+            width:65px;
+            background:#f4f7fb;
+            border:none;
+            border-radius:50%;
+            font-size:1.3rem;
+            transition:0.3s;
+        }
+
+        .wishlist-btn:hover{
+            background:red;
+            color:white;
+        }
+
+        /* TRUST SECTION */
+        .trust-bar{
+            margin-top:40px;
+            background:#f7f9fc;
+            border-radius:25px;
+            padding:25px;
+        }
+
+        .trust-item{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .trust-item i{
+            color:var(--primary);
+            font-size:1.5rem;
+        }
+
+        .trust-item h6{
+            margin:0;
+            font-weight:700;
+        }
+
+        .trust-item p{
+            margin:0;
+            color:#777;
+            font-size:0.9rem;
+        }
+
+        /* MODAL */
+        .image-modal{
+            display:none;
+            position:fixed;
+            z-index:9999;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.95);
+            justify-content:center;
+            align-items:center;
+            animation:fadeIn 0.3s ease;
+        }
+
+        .image-modal img{
+            max-width:85%;
+            max-height:85%;
+            border-radius:20px;
+        }
+
+        .close-modal{
+            position:absolute;
+            top:25px;
+            right:40px;
+            color:white;
+            font-size:45px;
+            cursor:pointer;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:991px){
+
+            .main-image{
+                height:420px;
+            }
+
+            .details-section{
+                padding:30px;
+            }
+
+            .rent-title{
+                font-size:2.2rem;
+            }
+
+            .feature-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .action-buttons{
+                flex-direction:column;
+            }
+
+            .wishlist-btn{
+                width:100%;
+                height:60px;
+                border-radius:50px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<section class="rent-section">
+
+    <div class="container">
+
+        <div class="rent-main-card">
+
+            <div class="row g-0">
+
+                <!-- IMAGE SECTION -->
+                <div class="col-lg-7">
+
+                    <div class="image-section">
+
+                        <!-- MAIN IMAGE -->
+                        <img id="mainRentImage"
+                             src="{{ rent.imageURL }}"
+                             alt="{{ rent.name }}"
+                             class="main-image"
+                             onclick="openModal(this.src)">
+
+                        <!-- NAVIGATION -->
+                        <button class="image-nav-btn prev-btn"
+                                onclick="previousImage()">
+
+                            <i class="fas fa-chevron-left"></i>
+
+                        </button>
+
+                        <button class="image-nav-btn next-btn"
+                                onclick="nextImage()">
+
+                            <i class="fas fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+                    <!-- THUMBNAILS -->
+                    <div class="thumbnail-container">
+
+                        <img src="{{ rent.imageURL }}"
+                             class="thumbnail"
+                             onclick="changeImage(this.src)">
+
+                        {% for image in images %}
+
+                        <img src="{{ image.image.url }}"
+                             class="thumbnail"
+                             onclick="changeImage(this.src)">
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+                <!-- DETAILS -->
+                <div class="col-lg-5">
+
+                    <div class="details-section">
+
+                        <div class="rent-badge">
+
+                            Available For Rent
+
+                        </div>
+
+                        <h1 class="rent-title">
+
+                            {{ rent.name }}
+
+                        </h1>
+
+                        <div class="rent-price">
+
+                            ${{ rent.price }}
+
+                            <span style="font-size:1rem; color:#777;">
+                                /day
+                            </span>
+
+                        </div>
+
+                        <p class="rent-description">
+
+                            {{ rent.details }}
+
+                        </p>
+
+                        <!-- FEATURES -->
+                        <div class="feature-grid">
+
+                            <div class="feature-card">
+
+                                <div class="feature-icon">
+
+                                    <i class="fas fa-car"></i>
+
+                                </div>
+
+                                <div class="feature-text">
+
+                                    <h6>Status</h6>
+
+                                    <p>{{ rent.status }}</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="feature-card">
+
+                                <div class="feature-icon">
+
+                                    <i class="fas fa-gas-pump"></i>
+
+                                </div>
+
+                                <div class="feature-text">
+
+                                    <h6>Fuel Efficient</h6>
+
+                                    <p>Premium Quality</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="feature-card">
+
+                                <div class="feature-icon">
+
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                </div>
+
+                                <div class="feature-text">
+
+                                    <h6>Location</h6>
+
+                                    <p>{{ rent.location }}</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="feature-card">
+
+                                <div class="feature-icon">
+
+                                    <i class="fas fa-headset"></i>
+
+                                </div>
+
+                                <div class="feature-text">
+
+                                    <h6>Support</h6>
+
+                                    <p>24/7 Assistance</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BUTTONS -->
+                        <div class="action-buttons">
+
+                            <!-- RENT BUTTON -->
+                            <button class="rent-btn"
+                                    onclick="openRentModal('{{ rent.id }}', '{{ rent.name }}')">
+
+                                <i class="fas fa-calendar-check me-2"></i>
+                                Rent This Car
+
+                            </button>
+
+                            <!-- BACK -->
+                            <a href="{% url 'rent' %}"
+                               class="back-btn">
+
+                                <i class="fas fa-arrow-left me-2"></i>
+                                Back
+
+                            </a>
+
+                            <!-- WISHLIST -->
+                            <button class="wishlist-btn"
+                                    onclick="addToWishlist('{{ rent.id }}')">
+
+                                <i class="fas fa-heart"></i>
+
+                            </button>
+
+                        </div>
+
+                        <!-- TRUST SECTION -->
+                        <div class="trust-bar">
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3 mb-md-0">
+
+                                    <div class="trust-item">
+
+                                        <i class="fas fa-check-circle"></i>
+
+                                        <div>
+
+                                            <h6>Verified Rental</h6>
+
+                                            <p>Trusted & insured vehicles</p>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="trust-item">
+
+                                        <i class="fas fa-lock"></i>
+
+                                        <div>
+
+                                            <h6>Secure Booking</h6>
+
+                                            <p>Fast and safe process</p>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal"
+     class="image-modal">
+
+    <span class="close-modal"
+          onclick="closeModal()">
+
+        &times;
+
+    </span>
+
+    <img id="modalImage">
+
+</div>
+
+<!-- RENT MODAL -->
+<div id="rentModal"
+     class="image-modal">
+
+    <div style="
+        background:white;
+        padding:40px;
+        border-radius:30px;
+        width:95%;
+        max-width:550px;
+        position:relative;
+    ">
+
+        <span class="close-modal"
+              onclick="closeRentModal()"
+              style="color:#111; top:15px; right:25px;">
+
+            &times;
+
+        </span>
+
+        <h2 style="font-weight:800; margin-bottom:15px;">
+
+            Rent This Car
+
+        </h2>
+
+        <p style="color:#666; margin-bottom:30px;">
+
+            Interested in renting
+            <strong id="rentCarName"></strong>?
+            Fill your details below.
+
+        </p>
+
+        <form method="POST"
+              action="/submit-rental-interest/">
+
+            {% csrf_token %}
+
+            <input type="hidden"
+                   name="rent_id"
+                   id="rentId">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Your Full Name"
+                   required
+                   class="form-control mb-3"
+                   style="padding:15px; border-radius:15px;">
+
+            <input type="email"
+                   name="email"
+                   placeholder="Your Email"
+                   required
+                   class="form-control mb-3"
+                   style="padding:15px; border-radius:15px;">
+
+            <input type="tel"
+                   name="phone"
+                   placeholder="Your Phone Number"
+                   required
+                   class="form-control mb-3"
+                   style="padding:15px; border-radius:15px;">
+
+            <input type="date"
+                   name="pickup_date"
+                   required
+                   class="form-control mb-3"
+                   style="padding:15px; border-radius:15px;">
+
+            <textarea name="message"
+                      rows="4"
+                      placeholder="Additional message..."
+                      class="form-control mb-4"
+                      style="padding:15px; border-radius:15px;"></textarea>
+
+            <button type="submit"
+                    class="rent-btn w-100">
+
+                Submit Rental Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // IMAGE GALLERY
+    let images = [];
+
+    images.push("{{ rent.imageURL }}");
+
+    {% for image in images %}
+        images.push("{{ image.image.url }}");
+    {% endfor %}
+
+    let currentImageIndex = 0;
+
+    function changeImage(src){
+
+        document.getElementById("mainRentImage").src = src;
+
+        currentImageIndex = images.indexOf(src);
+    }
+
+    function nextImage(){
+
+        currentImageIndex++;
+
+        if(currentImageIndex >= images.length){
+
+            currentImageIndex = 0;
+        }
+
+        document.getElementById("mainRentImage").src =
+        images[currentImageIndex];
+    }
+
+    function previousImage(){
+
+        currentImageIndex--;
+
+        if(currentImageIndex < 0){
+
+            currentImageIndex = images.length - 1;
+        }
+
+        document.getElementById("mainRentImage").src =
+        images[currentImageIndex];
+    }
+
+    // IMAGE MODAL
+    function openModal(src){
+
+        document.getElementById("imageModal").style.display = "flex";
+
+        document.getElementById("modalImage").src = src;
+    }
+
+    function closeModal(){
+
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    // RENT MODAL
+    function openRentModal(rentId, rentName){
+
+        document.getElementById("rentModal").style.display = "flex";
+
+        document.getElementById("rentId").value = rentId;
+
+        document.getElementById("rentCarName").innerText = rentName;
+    }
+
+    function closeRentModal(){
+
+        document.getElementById("rentModal").style.display = "none";
+    }
+
+    // WISHLIST
+    function addToWishlist(rentId){
+
+        fetch('/wishlist/', {
+
+            method:'POST',
+
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded',
+                'X-CSRFToken':'{{ csrf_token }}'
+            },
+
+            body:`rent_id=${rentId}`
+        })
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            alert("Added to wishlist ❤️");
+
+        });
+
+    }
+
+    // KEYBOARD IMAGE NAVIGATION
+    document.addEventListener('keydown', function(e){
+
+        if(e.key === "ArrowRight"){
+
+            nextImage();
+        }
+
+        if(e.key === "ArrowLeft"){
+
+            previousImage();
+        }
+
+    });
+
+</script>
+
+{% endblock content %}

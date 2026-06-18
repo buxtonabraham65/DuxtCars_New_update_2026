@@ -1,0 +1,1503 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ========================= -->
+<!-- HERO SECTION -->
+<!-- ========================= -->
+
+<section class="hero-home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+
+    <div class="container hero-content">
+
+        <div class="row align-items-center min-vh-100">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6">
+
+                <div class="hero-badge">
+                    <i class="fas fa-shield-check"></i>
+                    Ghana’s Trusted Premium Car Marketplace
+                </div>
+
+                <h1 class="hero-title">
+                    Buy, Rent & Sell
+                    <span>Premium Cars</span>
+                    With Total Confidence
+                </h1>
+
+                <p class="hero-text">
+                    Discover luxury and affordable vehicles from trusted dealers and private sellers.
+                    Whether you want to buy your dream car, rent a luxury ride for an event,
+                    sell your car fast, or book professional maintenance services —
+                    DuxtCars gives you a secure, smooth and premium experience.
+                </p>
+
+                <!-- SEARCH -->
+                <form class="hero-search"
+                      method="GET"
+                      action="{% url 'store' %}">
+
+                    <div class="search-box">
+
+                        <i class="fas fa-search"></i>
+
+                        <input type="text"
+                               name="q"
+                               placeholder="Search BMW, Mercedes, Toyota, Honda...">
+
+                        <button type="submit">
+                            Find Cars
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <!-- HERO BUTTONS -->
+                <div class="hero-buttons">
+
+                    <a href="{% url 'store' %}"
+                       class="hero-btn hero-btn-primary">
+
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Cars
+
+                    </a>
+
+                    <a href="{% url 'rent' %}"
+                       class="hero-btn hero-btn-light">
+
+                        <i class="fas fa-car-side"></i>
+                        Rent Cars
+
+                    </a>
+
+                    <a href="{% url 'sell' %}"
+                       class="hero-btn hero-btn-outline">
+
+                        <i class="fas fa-tags"></i>
+                        Sell Your Car
+
+                    </a>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="hero-stats">
+
+                    <div class="stat-card">
+
+                        <h3>500+</h3>
+                        <p>Cars Available</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h3>100%</h3>
+                        <p>Trusted Deals</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6">
+
+                <div class="hero-image-wrapper">
+
+                    <img src="{% static 'images/pictures for homepage/bh.jpeg' %}"
+                         class="hero-main-image"
+                         alt="Luxury Car">
+
+                    <div class="floating-info top-card">
+
+                        <i class="fas fa-check-circle"></i>
+
+                        <div>
+                            <h6>Verified Vehicles</h6>
+                            <span>Trusted & Inspected</span>
+                        </div>
+
+                    </div>
+
+                    <div class="floating-info bottom-card">
+
+                        <i class="fas fa-bolt"></i>
+
+                        <div>
+                            <h6>Fast Processing</h6>
+                            <span>Quick & Secure Deals</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SERVICES -->
+<!-- ========================= -->
+
+<section class="services-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>OUR SERVICES</span>
+
+            <h2>
+                Complete Automotive Solutions In One Place
+            </h2>
+
+            <p>
+                Buy, rent, sell and maintain your vehicle with confidence through DuxtCars.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <!-- BUY -->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'store' %}"
+                   class="service-link">
+
+                    <div class="service-card">
+
+                        <div class="service-image">
+
+                            <img src="{% static 'images/pictures for homepage/c4.jpeg' %}"
+                                 alt="Buy Cars">
+
+                            <div class="service-overlay"></div>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-tag">
+                                Premium Listings
+                            </span>
+
+                            <h3>Buy Cars</h3>
+
+                            <p>
+                                Explore luxury and affordable vehicles from trusted dealers and verified sellers.
+                            </p>
+
+                            <div class="service-action">
+
+                                Explore Inventory
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- RENT -->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'rent' %}"
+                   class="service-link">
+
+                    <div class="service-card">
+
+                        <div class="service-image">
+
+                            <img src="{% static 'images/pictures for homepage/c.jpeg' %}"
+                                 alt="Rent Cars">
+
+                            <div class="service-overlay"></div>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-tag">
+                                Luxury Rentals
+                            </span>
+
+                            <h3>Rent Cars</h3>
+
+                            <p>
+                                Rent premium vehicles for weddings, business trips, vacations and special events.
+                            </p>
+
+                            <div class="service-action">
+
+                                Rent A Car
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- SELL -->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'sell' %}"
+                   class="service-link">
+
+                    <div class="service-card">
+
+                        <div class="service-image">
+
+                            <img src="{% static 'images/pictures for homepage/c3.jpeg' %}"
+                                 alt="Sell Cars">
+
+                            <div class="service-overlay"></div>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-tag">
+                                Fast Selling
+                            </span>
+
+                            <h3>Sell Cars</h3>
+
+                            <p>
+                                List your car and connect with serious buyers quickly and securely.
+                            </p>
+
+                            <div class="service-action">
+
+                                Sell Your Car
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <!-- MAINTENANCE -->
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'car_maintenance' %}"
+                   class="service-link">
+
+                    <div class="service-card">
+
+                        <div class="service-image">
+
+                            <img src="{% static 'images/pictures/7.11.jpeg' %}"
+                                 alt="Maintenance">
+
+                            <div class="service-overlay"></div>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-tag">
+                                24/7 Support
+                            </span>
+
+                            <h3>Maintenance</h3>
+
+                            <p>
+                                Professional repair and emergency maintenance services wherever you are.
+                            </p>
+
+                            <div class="service-action">
+
+                                Book Service
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- POPULAR CATEGORIES -->
+<!-- ========================= -->
+
+<section class="category-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>POPULAR CATEGORIES</span>
+
+            <h2>
+                Find Your Perfect Ride
+            </h2>
+
+            <p>
+                Browse vehicles by category and discover your next dream car.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'store' %}?category=SUV"
+                   class="category-card">
+
+                    <img src="{% static 'images/pictures for homepage/c4.jpeg' %}"
+                         alt="SUV">
+
+                    <div class="category-overlay">
+
+                        <div>
+
+                            <h4>SUV Cars</h4>
+
+                            <p>
+                                Spacious, Luxury & Powerful
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'store' %}?category=Sedan"
+                   class="category-card">
+
+                    <img src="{% static 'images/pictures for homepage/bd.jpeg' %}"
+                         alt="Sedan">
+
+                    <div class="category-overlay">
+
+                        <div>
+
+                            <h4>Sedan Cars</h4>
+
+                            <p>
+                                Elegant & Comfortable
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'store' %}?category=Sports"
+                   class="category-card">
+
+                    <img src="{% static 'images/pictures for homepage/bee.jpeg' %}"
+                         alt="Sports Cars">
+
+                    <div class="category-overlay">
+
+                        <div>
+
+                            <h4>Sports Cars</h4>
+
+                            <p>
+                                Fast, Exotic & Premium
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <a href="{% url 'rent' %}"
+                   class="category-card">
+
+                    <img src="{% static 'images/pictures for homepage/dde.jpeg' %}"
+                         alt="Luxury Rental">
+
+                    <div class="category-overlay">
+
+                        <div>
+
+                            <h4>Luxury Rentals</h4>
+
+                            <p>
+                                Drive In Style
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- WHY CHOOSE US -->
+<!-- ========================= -->
+
+<section class="why-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+
+                <img src="{% static 'images/abes9.jpeg' %}"
+                     class="why-image"
+                     alt="Why Choose Us">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="section-title left-title">
+
+                    <span>WHY CHOOSE DUXTCARS</span>
+
+                    <h2>
+                        We Deliver A Premium Automotive Experience
+                    </h2>
+
+                </div>
+
+                <div class="why-box">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    <div>
+
+                        <h5>Verified Quality Cars</h5>
+
+                        <p>
+                            Every vehicle is carefully inspected and verified before listing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="why-box">
+
+                    <i class="fas fa-shield-alt"></i>
+
+                    <div>
+
+                        <h5>Trusted Transactions</h5>
+
+                        <p>
+                            Buy, rent and sell with complete confidence and transparency.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="why-box">
+
+                    <i class="fas fa-headset"></i>
+
+                    <div>
+
+                        <h5>24/7 Customer Support</h5>
+
+                        <p>
+                            Our support team is available anytime you need assistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="why-box">
+
+                    <i class="fas fa-bolt"></i>
+
+                    <div>
+
+                        <h5>Fast Processing</h5>
+
+                        <p>
+                            Get quick approvals and smooth vehicle transactions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TESTIMONIALS -->
+<!-- ========================= -->
+
+<section class="testimonial-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>TESTIMONIALS</span>
+
+            <h2>
+                What Our Customers Say
+            </h2>
+
+        </div>
+
+        <div id="testimonialCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel"
+             data-bs-interval="4000">
+
+            <!-- INDICATORS -->
+            <div class="carousel-indicators">
+
+                <button type="button"
+                        data-bs-target="#testimonialCarousel"
+                        data-bs-slide-to="0"
+                        class="active">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#testimonialCarousel"
+                        data-bs-slide-to="1">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#testimonialCarousel"
+                        data-bs-slide-to="2">
+                </button>
+
+            </div>
+
+            <!-- ITEMS -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-image">
+
+                            <img src="{% static 'images/abes5.jpeg' %}"
+                                 alt="Customer">
+
+                        </div>
+
+                        <h4>Jane Smith</h4>
+
+                        <p>
+                            “DuxtCars made renting a luxury vehicle for my wedding smooth,
+                            secure and stress free. Their customer support was amazing.”
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-image">
+
+                            <img src="{% static 'images/abes1.jpeg' %}"
+                                 alt="Customer">
+
+                        </div>
+
+                        <h4>Prince Bond</h4>
+
+                        <p>
+                            “Excellent customer service and premium quality vehicles.
+                            I highly recommend DuxtCars to anyone looking for trusted deals.”
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-image">
+
+                            <img src="{% static 'images/abes2.jpeg' %}"
+                                 alt="Customer">
+
+                        </div>
+
+                        <h4>Michael Johnson</h4>
+
+                        <p>
+                            “Selling my car on DuxtCars was incredibly fast and transparent.
+                            I found serious buyers within days.”
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CONTROLS -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-arrow">
+
+                    <i class="fas fa-chevron-left"></i>
+
+                </span>
+
+            </button>
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-arrow">
+
+                    <i class="fas fa-chevron-right"></i>
+
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<section class="contact-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>CONTACT US</span>
+
+            <h2>
+                Need Help?
+            </h2>
+
+            <p>
+                Reach out to us for purchases, rentals, maintenance and general inquiries.
+            </p>
+
+        </div>
+
+        <div class="contact-wrapper">
+
+            <form method="POST"
+                  action="{% url 'contact_form_submit' %}">
+
+                {% csrf_token %}
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <input type="text"
+                                   name="name"
+                                   placeholder="Your Name"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <input type="email"
+                                   name="email"
+                                   placeholder="Your Email"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <input type="tel"
+                                   name="phone"
+                                   placeholder="Phone Number"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+
+                            <input type="text"
+                                   name="subject"
+                                   placeholder="Subject">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <div class="form-group">
+
+                            <textarea name="message"
+                                      placeholder="Your Message..."
+                                      required></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="contact-btn">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CSS -->
+<!-- ========================= -->
+
+<style>
+
+/* =========================
+GLOBAL
+========================= */
+
+body{
+    background:#f5f7fb;
+    overflow-x:hidden;
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title{
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#0d6efd;
+    font-weight:700;
+    letter-spacing:1px;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-size:48px;
+    font-weight:800;
+    color:#111;
+}
+
+.section-title p{
+    color:#666;
+    max-width:700px;
+    margin:auto;
+    margin-top:15px;
+}
+
+.left-title{
+    text-align:left;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero-home{
+    position:relative;
+    min-height:100vh;
+    background:linear-gradient(to right,#050816,#08152c);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    padding:120px 0 80px;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+.hero-shape{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(100px);
+}
+
+.hero-shape-1{
+    width:350px;
+    height:350px;
+    background:#0d6efd;
+    top:-100px;
+    right:-80px;
+    opacity:0.25;
+}
+
+.hero-shape-2{
+    width:250px;
+    height:250px;
+    background:red;
+    bottom:-80px;
+    left:-80px;
+    opacity:0.15;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,0.1);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:50px;
+    margin-bottom:25px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-title{
+    color:#fff;
+    font-size:70px;
+    font-weight:900;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-title span{
+    color:#0d6efd;
+}
+
+.hero-text{
+    color:#d0d7e2;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+.search-box{
+    background:#fff;
+    border-radius:70px;
+    padding:10px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.search-box i{
+    color:#0d6efd;
+    margin-left:15px;
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+.search-box button{
+    border:none;
+    background:#0d6efd;
+    color:#fff;
+    padding:14px 28px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:700;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px);
+}
+
+.hero-btn-primary{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.hero-btn-light{
+    background:#fff;
+    color:#111;
+}
+
+.hero-btn-outline{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.hero-stats{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:20px;
+    min-width:160px;
+    backdrop-filter:blur(10px);
+}
+
+.stat-card h3{
+    color:#fff;
+    font-size:32px;
+    font-weight:800;
+}
+
+.stat-card p{
+    color:#ddd;
+    margin:0;
+}
+
+.hero-image-wrapper{
+    position:relative;
+}
+
+.hero-main-image{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+.floating-info{
+    position:absolute;
+    background:#fff;
+    border-radius:18px;
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.floating-info i{
+    width:50px;
+    height:50px;
+    background:#0d6efd;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.top-card{
+    top:20px;
+    left:-30px;
+}
+
+.bottom-card{
+    bottom:20px;
+    right:-20px;
+}
+
+/* =========================
+SERVICES
+========================= */
+
+.services-section{
+    padding:100px 0;
+    background:#f8f9fc;
+}
+
+.service-link{
+    text-decoration:none;
+}
+
+.service-card{
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    transition:0.4s ease;
+    height:100%;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 50px rgba(0,0,0,0.14);
+}
+
+.service-image{
+    position:relative;
+    height:240px;
+    overflow:hidden;
+}
+
+.service-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
+}
+
+.service-card:hover .service-image img{
+    transform:scale(1.08);
+}
+
+.service-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.55),transparent);
+}
+
+.service-content{
+    padding:30px 25px;
+}
+
+.service-tag{
+    display:inline-block;
+    background:#eef4ff;
+    color:#0d6efd;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.service-content h3{
+    font-size:28px;
+    color:#111;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.service-content p{
+    color:#666;
+    line-height:1.8;
+}
+
+.service-action{
+    margin-top:25px;
+    color:#0d6efd;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:0.3s;
+}
+
+.service-card:hover .service-action{
+    color:red;
+    gap:15px;
+}
+
+/* =========================
+CATEGORY
+========================= */
+
+.category-section{
+    padding:100px 0;
+    background:#fff;
+}
+
+.category-card{
+    position:relative;
+    display:block;
+    height:350px;
+    border-radius:25px;
+    overflow:hidden;
+}
+
+.category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
+}
+
+.category-card:hover img{
+    transform:scale(1.1);
+}
+
+.category-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+}
+
+.category-overlay h4{
+    color:#fff;
+    font-weight:800;
+}
+
+.category-overlay p{
+    color:#ddd;
+}
+
+/* =========================
+WHY
+========================= */
+
+.why-section{
+    padding:100px 0;
+}
+
+.why-image{
+    width:100%;
+    border-radius:30px;
+}
+
+.why-box{
+    display:flex;
+    gap:20px;
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.why-box i{
+    color:#0d6efd;
+    font-size:28px;
+}
+
+/* =========================
+TESTIMONIAL
+========================= */
+
+.testimonial-section{
+    padding:100px 0;
+    background:#0b1220;
+}
+
+.testimonial-section .section-title h2,
+.testimonial-section .section-title span{
+    color:#fff;
+}
+
+.testimonial-card{
+    background:#fff;
+    max-width:760px;
+    margin:auto;
+    padding:50px 40px;
+    border-radius:30px;
+    text-align:center;
+}
+
+.testimonial-image{
+    width:120px;
+    height:120px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #0d6efd;
+}
+
+.testimonial-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.testimonial-card h4{
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.testimonial-card p{
+    color:#666;
+    line-height:1.9;
+}
+
+.carousel-arrow{
+    width:60px;
+    height:60px;
+    background:#0d6efd;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.carousel-arrow i{
+    color:#fff;
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-section{
+    padding:100px 0;
+}
+
+.contact-wrapper{
+    background:#fff;
+    padding:50px;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.contact-wrapper input,
+.contact-wrapper textarea{
+    width:100%;
+    border:none;
+    background:#f5f7fb;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.contact-wrapper textarea{
+    height:180px;
+}
+
+.contact-btn{
+    border:none;
+    background:#0d6efd;
+    color:#fff;
+    padding:16px 35px;
+    border-radius:50px;
+    font-weight:700;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:991px){
+
+    .hero-home{
+        padding:120px 0 80px;
+    }
+
+    .hero-title{
+        font-size:48px;
+    }
+
+    .hero-image-wrapper{
+        margin-top:60px;
+    }
+
+    .floating-info{
+        position:relative;
+        margin-top:20px;
+        left:auto;
+        right:auto;
+        bottom:auto;
+        top:auto;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-title{
+        font-size:36px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    .search-box{
+        flex-direction:column;
+        border-radius:25px;
+        padding:20px;
+    }
+
+    .search-box i{
+        display:none;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+    .search-box button{
+        width:100%;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero-stats{
+        flex-direction:column;
+    }
+
+    .stat-card{
+        width:100%;
+    }
+
+    .service-image{
+        height:220px;
+    }
+
+    .category-card{
+        height:280px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .testimonial-card{
+        padding:35px 20px;
+    }
+
+    .carousel-arrow{
+        width:45px;
+        height:45px;
+    }
+
+    .contact-wrapper{
+        padding:30px 20px;
+    }
+
+}
+
+</style>
+
+{% endblock content %}

@@ -1,0 +1,430 @@
+body{
+	background-color: hsl(0, 0%, 98%);
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.thumbnail{
+	width: 100%;
+	height: 200px;
+	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}
+
+.product{
+	border-radius: 0 0 4px 4px;
+}
+
+/* styles.css */
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, var(--bs-bg-opacity)) !important; /* Black background color */
+}
+
+}
+
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#cart-total{
+	display: block;
+	text-align: center;
+	color:#fff;
+	background-color: red;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+.btn{
+	border-radius: 0;
+}
+
+.row-image{
+	width: 100px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+	
+
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+
+.hidden{
+	display: none!important;
+}
+
+/* Carousel Styles */
+.carousel-inner img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text readability */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for controls */
+    border-radius: 50%;
+}
+
+.carousel-indicators li {
+    background-color: rgba(0, 0, 0, 0.5); /* Dots color */
+}
+
+/* Form Styles */
+.contact-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.contact-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-top {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    display: inline;
+}
+
+.footer-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .footer-logo img {
+    max-height: 50px;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom .footer-logo {
+        margin-top: 10px;
+    }
+}
+
+#product more images view
+
+/* Product Detail Page Styles */
+
+
+
+
+.product-container {
+    text-align: center; /* Center all text in the product detail section */
+    margin: 20px; /* Add some margin for spacing */
+}
+
+/* Style the main product image */
+.main-product-image {
+    width: 100%; /* Full width for responsive design */
+    max-width: 800px; /* Increase the max size of the main image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    display: block; /* Ensure it is displayed as a block element */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Style additional images */
+.product-images {
+    display: flex;
+    justify-content: center; /* Center the additional images */
+    flex-wrap: wrap; /* Wrap images if they overflow */
+    margin-top: 10px; /* Space above the additional images */
+}
+
+.additional-product-image {
+    width: 500px; /* Width of additional images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5px; /* Margin between images */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Style for headings */
+h1 {
+    font-size: 2em; /* Font size for the heading */
+    margin: 10px 0; /* Margin around the heading */
+}
+
+/* Style for the price */
+p.price {
+    font-size: 1.5em; /* Larger font for price */
+    color: #e74c3c; /* Color for price */
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Padding around button */
+    font-size: 1em; /* Font size */
+    color: #fff; /* Text color */
+    background-color: #007bff; /* Button color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+
+    .additional-product-image {
+        width: 80px; /* Smaller additional images on mobile */
+    }
+}
+
+
+
+
+#For rent more images view
+/* Rent Detail Page Styles */
+
+.rent-detail {
+    text-align: center; /* Center all text in the rent detail section */
+    margin: 20px; /* Add some margin for spacing */
+}
+
+/* Style the main image */
+.main-image {
+    width: 100%; /* Full width for responsive design */
+    max-width: 800px; /* Increase the max size of the main image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    display: block; /* Ensure it is displayed as a block element */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Style additional images */
+.rent-images {
+    display: flex;
+    justify-content: center; /* Center the additional images */
+    flex-wrap: wrap; /* Wrap images if they overflow */
+    margin-top: 10px; /* Space above the additional images */
+}
+
+.additional-image {
+    width: 500px; /* Width of additional images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5px; /* Margin between images */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Style for headings */
+h1 {
+    font-size: 2em; /* Font size for the heading */
+    margin: 10px 0; /* Margin around the heading */
+}
+
+/* Style for the price */
+p.price {
+    font-size: 1.5em; /* Larger font for price */
+    color: #e74c3c; /* Color for price */
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Padding around button */
+    font-size: 1em; /* Font size */
+    color: #fff; /* Text color */
+    background-color: #007bff; /* Button color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+
+    .additional-image {
+        width: 350px; /* Smaller additional images on mobile */
+    }
+}
+

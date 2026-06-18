@@ -1,0 +1,759 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- SELL HERO SECTION -->
+<section class="sell-hero-section">
+    <div class="overlay"></div>
+
+    <div class="container position-relative">
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6">
+
+                <div class="hero-badge">
+                    <i class="fas fa-car"></i>
+                    SELL WITH DUXTCARS
+                </div>
+
+                <h1 class="sell-title">
+                    Sell Your Car Faster <br>
+                    With <span>DuxtCars</span>
+                </h1>
+
+                <p class="sell-subtitle">
+                    Reach thousands of verified buyers across Ghana.
+                    List your vehicle easily and get the best value
+                    for your car with DuxtCars.
+                </p>
+
+                <div class="hero-features">
+
+                    <div class="feature-box">
+                        <i class="fas fa-check-circle"></i>
+                        Trusted Buyers
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fas fa-bolt"></i>
+                        Fast Listing Approval
+                    </div>
+
+                    <div class="feature-box">
+                        <i class="fas fa-shield-alt"></i>
+                        Secure Transactions
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE CAROUSEL -->
+            <div class="col-lg-6">
+
+                <div id="sellHeroCarousel"
+                     class="carousel slide hero-carousel"
+                     data-ride="carousel"
+                     data-interval="3500">
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#sellHeroCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#sellHeroCarousel" data-slide-to="1"></li>
+                        <li data-target="#sellHeroCarousel" data-slide-to="2"></li>
+                        <li data-target="#sellHeroCarousel" data-slide-to="3"></li>
+                        <li data-target="#sellHeroCarousel" data-slide-to="4"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <img class="d-block w-100"
+                                 src="{% static 'images/pictures for homepage/bd.jpeg' %}"
+                                 alt="">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="{% static 'images/pictures for homepage/car2.jpg' %}"
+                                 alt="">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="{% static 'images/pictures for homepage/car3.jpg' %}"
+                                 alt="">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="{% static 'images/pictures for homepage/car5.jpg' %}"
+                                 alt="">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100"
+                                 src="{% static 'images/pictures for homepage/car11.jpg' %}"
+                                 alt="">
+                        </div>
+
+                    </div>
+
+                    <a class="carousel-control-prev"
+                       href="#sellHeroCarousel"
+                       role="button"
+                       data-slide="prev">
+
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+
+                    <a class="carousel-control-next"
+                       href="#sellHeroCarousel"
+                       role="button"
+                       data-slide="next">
+
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY SELL WITH US -->
+<section class="why-sell-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+            <span>WHY CHOOSE US</span>
+
+            <h2>
+                We Help You Sell Faster
+            </h2>
+
+            <p>
+                DuxtCars gives your vehicle maximum exposure to real buyers.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+
+                    <h4>Large Audience</h4>
+
+                    <p>
+                        Reach thousands of potential buyers every day.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+
+                    <h4>Beautiful Listings</h4>
+
+                    <p>
+                        Showcase your car with multiple images and details.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+
+                    <h4>Trusted Platform</h4>
+
+                    <p>
+                        Buyers trust DuxtCars for verified vehicle listings.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+
+                    <h4>Quick Approval</h4>
+
+                    <p>
+                        Get your listing approved and published quickly.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SELL FORM -->
+<section class="sell-form-section">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="sell-form-wrapper">
+
+                    <div class="form-header text-center">
+
+                        <span>LIST YOUR VEHICLE</span>
+
+                        <h2>Submit Your Car Details</h2>
+
+                        <p>
+                            Fill the form below and our team will contact you shortly.
+                        </p>
+
+                    </div>
+
+                    <form method="POST"
+                          action="{% url 'submit-sell-interest' %}"
+                          enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Car Brand</label>
+
+                                    <input type="text"
+                                           name="carBrand"
+                                           class="form-control"
+                                           placeholder="Example: Toyota"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Car Model</label>
+
+                                    <input type="text"
+                                           name="carModel"
+                                           class="form-control"
+                                           placeholder="Example: Camry"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Year</label>
+
+                                    <input type="number"
+                                           name="carYear"
+                                           class="form-control"
+                                           placeholder="2022"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Expected Price ($)</label>
+
+                                    <input type="number"
+                                           name="carPrice"
+                                           class="form-control"
+                                           placeholder="15000"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Your Full Name</label>
+
+                                    <input type="text"
+                                           name="sellerName"
+                                           class="form-control"
+                                           placeholder="Enter your full name"
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+
+                                    <input type="text"
+                                           name="sellerPhone"
+                                           class="form-control"
+                                           placeholder="+233..."
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Email Address</label>
+
+                                    <input type="email"
+                                           name="sellerEmail"
+                                           class="form-control"
+                                           placeholder="example@gmail.com">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label>Location</label>
+
+                                    <input type="text"
+                                           name="location"
+                                           class="form-control"
+                                           placeholder="Accra, Kumasi..."
+                                           required>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    <label>Vehicle Description</label>
+
+                                    <textarea name="carDetails"
+                                              rows="5"
+                                              class="form-control"
+                                              placeholder="Tell buyers more about your car..."
+                                              required></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+
+                                    <label>Upload Car Images</label>
+
+                                    <input type="file"
+                                           class="form-control-file"
+                                           name="carImages"
+                                           multiple>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 text-center">
+
+                                <button type="submit"
+                                        class="submit-btn">
+
+                                    <i class="fas fa-paper-plane"></i>
+                                    Submit Car Listing
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+            <span>HOW IT WORKS</span>
+
+            <h2>Sell In 4 Easy Steps</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="step-card">
+
+                    <div class="step-number">1</div>
+
+                    <h4>Submit Form</h4>
+
+                    <p>
+                        Fill in your car details and upload photos.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="step-card">
+
+                    <div class="step-number">2</div>
+
+                    <h4>Verification</h4>
+
+                    <p>
+                        Our team reviews and verifies your listing.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="step-card">
+
+                    <div class="step-number">3</div>
+
+                    <h4>Get Buyers</h4>
+
+                    <p>
+                        Interested buyers contact you directly.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="step-card">
+
+                    <div class="step-number">4</div>
+
+                    <h4>Sell Successfully</h4>
+
+                    <p>
+                        Close your deal quickly and securely.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.sell-hero-section{
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(to right,#050816,#10172d);
+    overflow: hidden;
+}
+
+.sell-hero-section .overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.hero-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 18px;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.sell-title{
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.sell-title span{
+    color: #0d6efd;
+}
+
+.sell-subtitle{
+    color: #cfd8e3;
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.hero-features{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.feature-box{
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.hero-carousel img{
+    height: 480px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    margin-bottom: 60px;
+}
+
+.section-title span{
+    color: #0d6efd;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.section-title h2{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.section-title p{
+    color: #777;
+    margin-top: 15px;
+}
+
+/* =========================
+   WHY SELL
+========================= */
+
+.why-sell-section{
+    padding: 100px 0;
+    background: #fff;
+}
+
+.why-card{
+    background: #fff;
+    border-radius: 22px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    height: 100%;
+}
+
+.why-card:hover{
+    transform: translateY(-10px);
+}
+
+.why-icon{
+    width: 80px;
+    height: 80px;
+    background: #0d6efd;
+    color: #fff;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.sell-form-section{
+    padding: 100px 0;
+    background: #f5f7fb;
+}
+
+.sell-form-wrapper{
+    background: #fff;
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.form-header span{
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.form-header h2{
+    font-size: 2.5rem;
+    margin-top: 15px;
+    font-weight: 800;
+}
+
+.form-header p{
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+.form-group label{
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-control{
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+}
+
+textarea.form-control{
+    height: auto;
+    padding-top: 15px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+.submit-btn{
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover{
+    background: #061a40;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works{
+    padding: 100px 0;
+    background: #fff;
+}
+
+.step-card{
+    background: #fff;
+    padding: 40px 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.step-card:hover{
+    transform: translateY(-8px);
+}
+
+.step-number{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    background: #0d6efd;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:991px){
+
+    .sell-title{
+        font-size: 2.4rem;
+    }
+
+    .hero-carousel{
+        margin-top: 50px;
+    }
+
+    .hero-carousel img{
+        height: 350px;
+    }
+
+    .sell-form-wrapper{
+        padding: 30px 20px;
+    }
+
+}
+
+</style>
+
+{% endblock content %}

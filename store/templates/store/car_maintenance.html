@@ -1,0 +1,894 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="maintenance-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container position-relative">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6">
+
+                <div class="hero-badge">
+                    <i class="fas fa-tools"></i>
+                    PROFESSIONAL AUTO CARE
+                </div>
+
+                <h1 class="hero-title">
+                    Car Maintenance <br>
+                    & Repair Services
+                </h1>
+
+                <p class="hero-subtitle">
+                    Fast, reliable and professional car repair services anywhere and anytime
+                    your vehicle breaks down. Our team is always ready to assist you.
+                </p>
+
+                <div class="contact-box">
+
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+
+                        <div>
+                            <span>Call / WhatsApp</span>
+                            <h5>+223 20 984 0865</h5>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+
+                        <div>
+                            <span>Availability</span>
+                            <h5>24/7 Emergency Support</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="#maintenanceForm" class="btn-primary-custom">
+                        Book Service
+                    </a>
+
+                    <a href="https://wa.me/223209840865"
+                       target="_blank"
+                       class="btn-outline-custom">
+
+                        WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CAROUSEL -->
+<div class="col-lg-6">
+
+    <div id="maintenanceCarousel"
+         class="carousel slide maintenance-carousel"
+         data-bs-ride="carousel"
+         data-bs-interval="3000">
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+
+            <button type="button"
+                    data-bs-target="#maintenanceCarousel"
+                    data-bs-slide-to="0"
+                    class="active">
+            </button>
+
+            <button type="button"
+                    data-bs-target="#maintenanceCarousel"
+                    data-bs-slide-to="1">
+            </button>
+
+            <button type="button"
+                    data-bs-target="#maintenanceCarousel"
+                    data-bs-slide-to="2">
+            </button>
+
+            <button type="button"
+                    data-bs-target="#maintenanceCarousel"
+                    data-bs-slide-to="3">
+            </button>
+
+            <button type="button"
+                    data-bs-target="#maintenanceCarousel"
+                    data-bs-slide-to="4">
+            </button>
+
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner rounded shadow-lg">
+
+            <div class="carousel-item active">
+                <img class="d-block w-100 carousel-image"
+                     src="{% static 'images/pictures for homepage/c.jpeg' %}"
+                     alt="Maintenance Image 1">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel-image"
+                     src="{% static 'images/pictures for homepage/bb.jpeg' %}"
+                     alt="Maintenance Image 2">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel-image"
+                     src="{% static 'images/pictures for homepage/c1.jpeg' %}"
+                     alt="Maintenance Image 3">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel-image"
+                     src="{% static 'images/pictures for homepage/ba.jpeg' %}"
+                     alt="Maintenance Image 4">
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100 carousel-image"
+                     src="{% static 'images/pictures for homepage/c2.jpeg' %}"
+                     alt="Maintenance Image 5">
+            </div>
+
+        </div>
+
+        <!-- Previous Button -->
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#maintenanceCarousel"
+                data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+        <!-- Next Button -->
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#maintenanceCarousel"
+                data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>OUR SERVICES</span>
+
+            <h2>Complete Auto Repair Solutions</h2>
+
+            <p>
+                We provide professional maintenance services for all vehicle types.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+
+                    <h4>Oil Change</h4>
+
+                    <p>
+                        Premium oil replacement and engine servicing.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+
+                    <h4>Battery Services</h4>
+
+                    <p>
+                        Battery testing, replacement and jump-start services.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+
+                    <h4>Engine Repair</h4>
+
+                    <p>
+                        Professional diagnostics and engine repair solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fas fa-tire"></i>
+                    </div>
+
+                    <h4>Tire Services</h4>
+
+                    <p>
+                        Tire replacement, balancing and wheel alignment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us-section">
+
+    <div class="container">
+
+        <div class="section-title text-center">
+
+            <span>WHY CHOOSE US</span>
+
+            <h2>Reliable & Trusted Mechanics</h2>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="why-card">
+
+                    <i class="fas fa-user-shield"></i>
+
+                    <h4>Certified Technicians</h4>
+
+                    <p>
+                        Our experienced mechanics ensure quality workmanship.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="why-card">
+
+                    <i class="fas fa-stopwatch"></i>
+
+                    <h4>Fast Response</h4>
+
+                    <p>
+                        We respond quickly to emergency breakdown situations.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="why-card">
+
+                    <i class="fas fa-map-marker-alt"></i>
+
+                    <h4>Mobile Assistance</h4>
+
+                    <p>
+                        We can come directly to your location when needed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOOKING FORM -->
+<section class="booking-section" id="maintenanceForm">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="booking-wrapper">
+
+                    <div class="booking-header text-center">
+
+                        <span>BOOK A SERVICE</span>
+
+                        <h2>Tell Us About Your Car Problem</h2>
+
+                        <p>
+                            Fill the form below and our team will contact you shortly.
+                        </p>
+
+                    </div>
+
+                    <form method="POST"
+                          action="{% url 'submit-sell-interest' %}"
+                          enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Car Brand</label>
+
+                                    <input type="text"
+                                           name="carBrand"
+                                           class="form-control"
+                                           placeholder="Toyota, Honda, BMW..."
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Car Model</label>
+
+                                    <input type="text"
+                                           name="carModel"
+                                           class="form-control"
+                                           placeholder="Camry, Civic..."
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Your Full Name</label>
+
+                                    <input type="text"
+                                           name="customerName"
+                                           class="form-control"
+                                           placeholder="Enter your full name"
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Phone Number</label>
+
+                                    <input type="text"
+                                           name="customerPhone"
+                                           class="form-control"
+                                           placeholder="+233..."
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Email Address</label>
+
+                                    <input type="email"
+                                           name="customerEmail"
+                                           class="form-control"
+                                           placeholder="example@gmail.com">
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+
+                                    <label>Your Location</label>
+
+                                    <input type="text"
+                                           name="location"
+                                           class="form-control"
+                                           placeholder="Accra, Kumasi..."
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+
+                                    <label>Describe The Problem</label>
+
+                                    <textarea name="carProblem"
+                                              rows="5"
+                                              class="form-control"
+                                              placeholder="Tell us what is wrong with your car..."
+                                              required></textarea>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+
+                                    <label>Upload Car Images (Optional)</label>
+
+                                    <input type="file"
+                                           class="form-control-file"
+                                           name="carImages"
+                                           multiple>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12 text-center">
+
+                                <button type="submit" class="submit-btn">
+
+                                    <i class="fas fa-paper-plane"></i>
+                                    Submit Maintenance Request
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EMERGENCY -->
+<section class="emergency-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h2>
+                    Emergency Breakdown Assistance
+                </h2>
+
+                <p>
+                    Stuck on the road? Our emergency team is available to help.
+                </p>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-right">
+
+                <a href="tel:+223209840865" class="emergency-btn">
+
+                    <i class="fas fa-phone-alt"></i>
+                    Call Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.maintenance-hero{
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(to right,#071224,#101d38);
+    overflow: hidden;
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.hero-title{
+    color: #fff;
+    font-size: 3.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-subtitle{
+    color: #d0d7e2;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.contact-box{
+    margin-top: 35px;
+}
+
+.contact-item{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-item i{
+    width: 60px;
+    height: 60px;
+    background: #0d6efd;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.contact-item span{
+    color: #aaa;
+    font-size: 14px;
+}
+
+.contact-item h5{
+    color: #fff;
+    margin: 0;
+}
+
+.hero-buttons{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary-custom{
+    background: #0d6efd;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-primary-custom:hover{
+    background: #061a40;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-outline-custom{
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover{
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+}
+
+.maintenance-carousel img{
+    height: 500px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    margin-bottom: 60px;
+}
+
+.section-title span{
+    color: #0d6efd;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.section-title h2{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.section-title p{
+    color: #777;
+    margin-top: 15px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-section{
+    padding: 100px 0;
+    background: #fff;
+}
+
+.service-card{
+    background: #fff;
+    border-radius: 25px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    height: 100%;
+}
+
+.service-card:hover{
+    transform: translateY(-10px);
+}
+
+.service-icon{
+    width: 85px;
+    height: 85px;
+    background: #0d6efd;
+    margin: auto;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why-us-section{
+    padding: 100px 0;
+    background: #f5f7fb;
+}
+
+.why-card{
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 22px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.why-card:hover{
+    transform: translateY(-10px);
+}
+
+.why-card i{
+    font-size: 40px;
+    color: #0d6efd;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-section{
+    padding: 100px 0;
+    background: #fff;
+}
+
+.booking-wrapper{
+    background: #fff;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.booking-header span{
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.booking-header h2{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.booking-header p{
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+.form-group label{
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-control{
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+}
+
+textarea.form-control{
+    height: auto;
+    padding-top: 15px;
+}
+
+.form-control:focus{
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.submit-btn{
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover{
+    background: #061a40;
+}
+
+/* =========================
+   EMERGENCY
+========================= */
+
+.emergency-section{
+    padding: 70px 0;
+    background: linear-gradient(to right,#0d6efd,#061a40);
+    color: #fff;
+}
+
+.emergency-btn{
+    background: #fff;
+    color: #0d6efd;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.emergency-btn:hover{
+    text-decoration: none;
+    background: #f1f1f1;
+    color: #061a40;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:991px){
+
+    .hero-title{
+        font-size: 2.4rem;
+    }
+
+    .maintenance-carousel{
+        margin-top: 50px;
+    }
+
+    .maintenance-carousel img{
+        height: 350px;
+    }
+
+    .booking-wrapper{
+        padding: 30px 20px;
+    }
+
+}
+
+</style>
+
+{% endblock content %}

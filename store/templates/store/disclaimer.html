@@ -1,0 +1,58 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<h1><b>DuxtCars Disclaimer</b></h1>
+<!-- Bootstrap Carousel -->
+<div id="carCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carCarousel" data-slide-to="1"></li>
+        <li data-target="#carCarousel" data-slide-to="2"></li>
+        <li data-target="#carCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'images\pictures for homepage\bb.jpeg' %}" alt="Car 1">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images\pictures for homepage\c1.jpeg' %}" alt="Car 2">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images\pictures for homepage\c.jpeg' %}" alt="Car 3">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images\pictures for homepage\ba.jpeg' %}" alt="Car 4">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<br>
+
+<p>All car information displayed on this website is provided by third parties. While every effort has been made to ensure that the information is accurate and up-to-date, DuxtCars, its related entities, and affiliates cannot accept any liability for any injury, loss, claim, or damages arising from the use of the information contained within this website.</p>
+
+<p>All information on this site is provided "as is" and is subject to change without notice. You should make your own enquiries regarding car details and seek relevant legal, financial, or professional advice as necessary before making any purchasing or selling decisions.</p>
+
+<p>We have obtained all information on this website from sources we believe to be reliable; however, we cannot guarantee its accuracy. Prospective buyers and sellers are advised to conduct their own investigations to verify the details of any car listing.</p>
+
+
+
+{% endblock content %}

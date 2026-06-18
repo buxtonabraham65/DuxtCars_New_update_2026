@@ -1,0 +1,775 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuxtCars Store</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --primary:#007bff;
+            --secondary:#ff0000;
+            --dark:#050816;
+            --light:#f8f9fc;
+            --white:#ffffff;
+        }
+
+        body{
+            font-family:'Montserrat',sans-serif;
+            background:#f4f7fb;
+        }
+
+        /* HERO SECTION */
+        .store-hero{
+            background:
+            linear-gradient(rgba(5,8,22,0.82), rgba(5,8,22,0.88)),
+            url("{% static 'assets/img/bb.jpeg' %}");
+            background-size:cover;
+            background-position:center;
+            padding:120px 0 90px;
+            border-radius:0 0 40px 40px;
+            margin-bottom:70px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .store-hero h1{
+            color:white;
+            font-size:4rem;
+            font-weight:800;
+        }
+
+        .store-hero p{
+            color:#d8d8d8;
+            font-size:1.1rem;
+            margin-top:15px;
+        }
+
+        .hero-btn{
+            background:var(--primary);
+            color:white;
+            padding:15px 35px;
+            border-radius:50px;
+            display:inline-block;
+            margin-top:25px;
+            font-weight:700;
+            transition:0.3s;
+        }
+
+        .hero-btn:hover{
+            background:#0056d2;
+            color:white;
+            transform:translateY(-3px);
+        }
+
+        /* SEARCH */
+        .search-box{
+            background:white;
+            padding:25px;
+            border-radius:25px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.08);
+            margin-top:-50px;
+            position:relative;
+            z-index:2;
+        }
+
+        .search-input{
+            border:none;
+            background:#f3f5fa;
+            padding:15px 20px;
+            border-radius:50px;
+            width:100%;
+            outline:none;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-buttons{
+            margin-top:30px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            justify-content:center;
+        }
+
+        .filter-btn{
+            border:none;
+            padding:12px 22px;
+            border-radius:50px;
+            background:white;
+            box-shadow:0 5px 20px rgba(0,0,0,0.06);
+            transition:0.3s;
+            font-weight:600;
+        }
+
+        .filter-btn:hover{
+            background:var(--primary);
+            color:white;
+            transform:translateY(-2px);
+        }
+
+        /* PRODUCT CARD */
+        .car-card{
+            background:white;
+            border-radius:28px;
+            overflow:hidden;
+            transition:0.4s;
+            box-shadow:0 10px 40px rgba(0,0,0,0.07);
+            height:100%;
+            position:relative;
+            border:none;
+        }
+
+        .car-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .car-image-wrapper{
+            overflow:hidden;
+            position:relative;
+        }
+
+        .product-image{
+            width:100%;
+            height:270px;
+            object-fit:cover;
+            transition:0.5s;
+        }
+
+        .car-card:hover .product-image{
+            transform:scale(1.08);
+        }
+
+        .status-badge{
+            position:absolute;
+            top:20px;
+            left:20px;
+            background:rgba(0,123,255,0.9);
+            color:white;
+            padding:8px 16px;
+            border-radius:50px;
+            font-size:0.85rem;
+            font-weight:600;
+            backdrop-filter:blur(10px);
+        }
+
+        .favorite-btn{
+            position:absolute;
+            top:20px;
+            right:20px;
+            width:45px;
+            height:45px;
+            border-radius:50%;
+            border:none;
+            background:rgba(255,255,255,0.2);
+            backdrop-filter:blur(10px);
+            color:white;
+            transition:0.3s;
+        }
+
+        .favorite-btn:hover{
+            background:red;
+        }
+
+        .card-body{
+            padding:30px;
+        }
+
+        .car-title{
+            font-size:1.35rem;
+            font-weight:700;
+            color:#111;
+        }
+
+        .car-detail{
+            color:#666;
+            margin-top:10px;
+            line-height:1.8;
+            min-height:60px;
+        }
+
+        .car-price{
+            font-size:1.7rem;
+            font-weight:800;
+            color:var(--primary);
+            margin-top:20px;
+        }
+
+        .card-actions{
+            display:flex;
+            gap:12px;
+            margin-top:25px;
+        }
+
+        .buy-btn{
+            flex:1;
+            background:var(--primary);
+            color:white;
+            border:none;
+            padding:14px;
+            border-radius:50px;
+            font-weight:700;
+            transition:0.3s;
+        }
+
+        .buy-btn:hover{
+            background:#0056d2;
+            transform:translateY(-2px);
+        }
+
+        .view-btn{
+            flex:1;
+            background:#f3f5fa;
+            color:#111;
+            border:none;
+            padding:14px;
+            border-radius:50px;
+            font-weight:700;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .view-btn:hover{
+            background:#111;
+            color:white;
+        }
+
+        /* FEATURE BAR */
+        .feature-bar{
+            background:white;
+            border-radius:25px;
+            padding:35px;
+            margin-bottom:60px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.07);
+        }
+
+        .feature-item{
+            text-align:center;
+        }
+
+        .feature-item i{
+            font-size:2rem;
+            color:var(--primary);
+            margin-bottom:15px;
+        }
+
+        .feature-item h5{
+            font-weight:700;
+        }
+
+        .feature-item p{
+            color:#777;
+            font-size:0.95rem;
+        }
+
+        /* MODAL */
+        .custom-modal{
+            display:none;
+            position:fixed;
+            z-index:9999;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            overflow:auto;
+            background:rgba(0,0,0,0.7);
+            backdrop-filter:blur(6px);
+            animation:fadeIn 0.3s ease;
+        }
+
+        .modal-content-custom{
+            background:white;
+            margin:4% auto;
+            width:95%;
+            max-width:600px;
+            border-radius:30px;
+            padding:40px;
+            position:relative;
+            animation:slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp{
+            from{
+                transform:translateY(40px);
+                opacity:0;
+            }
+            to{
+                transform:translateY(0);
+                opacity:1;
+            }
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+
+        .close-modal{
+            position:absolute;
+            right:25px;
+            top:20px;
+            font-size:30px;
+            cursor:pointer;
+            color:#888;
+        }
+
+        .close-modal:hover{
+            color:red;
+        }
+
+        .modal-title{
+            font-size:2rem;
+            font-weight:800;
+            margin-bottom:10px;
+        }
+
+        .modal-subtitle{
+            color:#666;
+            margin-bottom:30px;
+        }
+
+        .custom-input{
+            width:100%;
+            padding:16px 20px;
+            border:none;
+            background:#f4f7fb;
+            border-radius:16px;
+            margin-bottom:20px;
+            outline:none;
+        }
+
+        .submit-btn{
+            width:100%;
+            background:var(--primary);
+            color:white;
+            border:none;
+            padding:16px;
+            border-radius:50px;
+            font-weight:700;
+            transition:0.3s;
+        }
+
+        .submit-btn:hover{
+            background:#0056d2;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+
+            .store-hero h1{
+                font-size:2.5rem;
+            }
+
+            .card-actions{
+                flex-direction:column;
+            }
+
+            .modal-content-custom{
+                padding:30px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<!-- HERO -->
+<section class="store-hero text-center">
+
+    <div class="container">
+
+        <h1>
+            Discover Your Dream Car
+        </h1>
+
+        <p>
+            Buy, rent, or sell premium cars with elegance and confidence.
+        </p>
+
+        <a href="#cars-section" class="hero-btn">
+            Explore Collection
+        </a>
+
+    </div>
+
+</section>
+
+<div class="container">
+
+    <!-- SEARCH -->
+    <div class="search-box">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8 mb-3 mb-lg-0">
+                <input type="text"
+                       class="search-input"
+                       id="searchInput"
+                       placeholder="Search cars by name...">
+            </div>
+
+            <div class="col-lg-4 text-lg-end">
+                <button class="hero-btn border-0">
+                    <i class="fas fa-search me-2"></i> Search Cars
+                </button>
+            </div>
+
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filter-buttons">
+
+    <a href="{% url 'store' %}" class="filter-btn">
+        All Cars
+    </a>
+
+    <a href="?category=SEDAN" class="filter-btn">
+        Sedan
+    </a>
+
+    <a href="?category=SUV" class="filter-btn">
+        SUV
+    </a>
+
+    <a href="?category=LUXURY" class="filter-btn">
+        Luxury
+    </a>
+
+    <a href="?category=Sports" class="filter-btn">
+        Sports
+    </a>
+
+    <a href="?category=Electric" class="filter-btn">
+        Electric
+    </a>
+
+    <a href="?category=COUPE" class="filter-btn">
+        Coupe
+    </a>
+
+    <a href="?category=CONVERTIBLE" class="filter-btn">
+        Convertible
+    </a>
+
+    <a href="?category=WAGON" class="filter-btn">
+        Wagon
+    </a>
+
+    <a href="?category=MINIVAN" class="filter-btn">
+        Minivan
+    </a>
+
+    <a href="?category=PICKUP" class="filter-btn">
+        Pickup
+    </a>
+
+    <a href="?category=TRUCK" class="filter-btn">
+        Truck
+    </a>
+
+    <a href="?category=Electric" class="filter-btn">
+        Electric
+    </a>
+
+    
+
+</div>
+
+    </div>
+
+    <!-- FEATURE BAR -->
+    <div class="feature-bar">
+
+        <div class="row">
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+
+                <div class="feature-item">
+
+                    <i class="fas fa-shield-alt"></i>
+
+                    <h5>Trusted Cars</h5>
+
+                    <p>
+                        Verified and quality checked vehicles only.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+
+                <div class="feature-item">
+
+                    <i class="fas fa-headset"></i>
+
+                    <h5>24/7 Support</h5>
+
+                    <p>
+                        Fast customer support whenever you need us.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="feature-item">
+
+                    <i class="fas fa-bolt"></i>
+
+                    <h5>Fast Process</h5>
+
+                    <p>
+                        Quick buying and booking experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="row" id="cars-section">
+
+        {% for product in products %}
+
+        <div class="col-lg-4 col-md-6 mb-5 product-card">
+
+            <div class="car-card">
+
+                <div class="car-image-wrapper">
+
+                    <img class="product-image"
+                         src="{{ product.imageURL }}"
+                         alt="{{ product.name }}">
+
+                    <div class="status-badge">
+                        {{ product.status }}
+                    </div>
+
+                    <button class="favorite-btn"
+                        onclick="addToWishlist('{{ product.id }}')">
+
+                        <i class="fas fa-heart"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h4 class="car-title">
+                        {{ product.name }}
+                    </h4>
+
+                    <p class="car-detail">
+                        {{ product.detail|truncatechars:120 }}
+                    </p>
+
+                    <div class="car-price">
+                        ${{ product.price }}
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button
+                            class="buy-btn"
+                            onclick="openBuyModal('{{ product.id }}', '{{ product.name }}')">
+
+                            <i class="fas fa-shopping-cart me-2"></i>
+                            Buy Now
+
+                        </button>
+
+                        <a href="{% url 'product_detail' product.id %}"
+                           class="view-btn">
+
+                            <i class="fas fa-eye me-2"></i>
+                            View
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- BUY MODAL -->
+<div id="buyModal" class="custom-modal">
+
+    <div class="modal-content-custom">
+
+        <span class="close-modal" onclick="closeBuyModal()">
+            &times;
+        </span>
+
+        <h2 class="modal-title">
+            Purchase Request
+        </h2>
+
+        <p class="modal-subtitle">
+            Interested in buying
+            <strong id="carName"></strong>?
+            Fill in your details and our team will contact you.
+        </p>
+
+        <form id="buyForm" method="POST" action="/submit-interest/">
+
+            {% csrf_token %}
+
+            <input type="hidden"
+                   id="productId"
+                   name="product_id">
+
+            <input type="text"
+                   name="name"
+                   class="custom-input"
+                   placeholder="Full Name"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   class="custom-input"
+                   placeholder="Email Address"
+                   required>
+
+            <input type="tel"
+                   name="phone"
+                   class="custom-input"
+                   placeholder="Phone Number"
+                   required>
+
+            <textarea name="message"
+                      class="custom-input"
+                      rows="5"
+                      placeholder="Tell us more about your interest..."></textarea>
+
+            <button type="submit" class="submit-btn">
+
+                <i class="fas fa-paper-plane me-2"></i>
+                Submit Request
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // MODAL
+    function openBuyModal(productId, productName){
+
+        document.getElementById("buyModal").style.display = "block";
+
+        document.getElementById("productId").value = productId;
+
+        document.getElementById("carName").innerText = productName;
+    }
+
+    function closeBuyModal(){
+
+        document.getElementById("buyModal").style.display = "none";
+    }
+
+    window.onclick = function(event){
+
+        let modal = document.getElementById("buyModal");
+
+        if(event.target == modal){
+
+            modal.style.display = "none";
+        }
+    }
+
+    // SEARCH FILTER
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keyup", function(){
+
+        let filter = searchInput.value.toLowerCase();
+
+        let cards = document.querySelectorAll(".product-card");
+
+        cards.forEach(card => {
+
+            let title = card.querySelector(".car-title").innerText.toLowerCase();
+
+            if(title.includes(filter)){
+
+                card.style.display = "";
+
+            }else{
+
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+
+function addToWishlist(productId){
+
+    fetch('/wishlist/', {
+
+        method: 'POST',
+
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+
+        body: `product_id=${productId}`
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        if(data.success){
+
+            alert("Added to wishlist ❤️");
+
+        } else {
+
+            alert("Something went wrong");
+        }
+    });
+}
+</script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock content %}
