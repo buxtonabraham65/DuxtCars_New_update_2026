@@ -1,4 +1,4 @@
 Django==4.2.7
 Pillow==10.4.0
-psycopg[binary]==3.2.4
+psycopg[binary]==3.3.4
 dj_database_url==2.1.0
